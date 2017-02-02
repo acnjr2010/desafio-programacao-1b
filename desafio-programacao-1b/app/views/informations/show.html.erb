@@ -1,0 +1,39 @@
+<% file = File.readlines("public/system/information/documents/000/000/0#{0.downto(0) do |n| print @information.id[n] end if @information.id <= 9}#{@information.id}/original/#{@information.document_file_name}") %>
+
+<% header = file[0].split("\t") %>
+<% header.last.chomp! %>
+
+<% text = [] %>
+<% file.drop(1).each do |f| %>
+  <% text += f.split("\t") %>
+  <% text.last.chomp! %>
+<% end %>
+
+<table class="table table">
+  <thead>
+    <tr>
+      <% header.each do |h| %>
+        <th>
+          <%= h %>
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody class="table-striped">
+    <tr>
+      <% text.count.times do |pos| %>
+        <% if ((pos + 1) % 6 == 0) %>
+          <td>
+            <%= text[pos] %>
+          </td>
+        </tr>
+        <tr>
+        <% else %>
+        <td>
+          <%= text[pos] %>
+        </td>
+        <% end %>
+      <% end %>
+  </tbody>
+</table>

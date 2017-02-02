@@ -206,7 +206,7 @@ DEPENDENCIES
   faker (~> 1.7, >= 1.7.2)
   jbuilder (~> 1.2)
   jquery-rails
-  paperclip (~> 4.3, >= 4.3.2)
+  paperclip (~> 4.3, >= 4.3.3)
   pry-rails (~> 0.3.4)
   rails (= 4.0.0)
   rspec-rails (~> 3.5, >= 3.5.2)
