@@ -1,3 +1,5 @@
+<h1>Relatório do arquivo adicionado <%= @information.document_file_name %></h1>
+
 <% file = File.readlines("public/system/information/documents/000/000/0#{0.downto(0) do |n| print @information.id[n] end if @information.id <= 9}#{@information.id}/original/#{@information.document_file_name}") %>
 
 <% header = file[0].split("\t") %>
