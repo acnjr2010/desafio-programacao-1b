@@ -1,28 +1,56 @@
-== README
+# TESTE TAXWEB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Segue as informações para instalação e configuração do teste.
 
-Things you may want to cover:
+## Ruby version
+#### Ruby versão 2.1.0
 
-### Ruby version
-  
-### System dependencies
+## System dependencies
+#### Rails versão 4.0.0
 
-### Configuration
+## Configuration
+É necessário a instalação do RBENV ou RVM, no meu caso eu utilizo o RVM, para instalar basta abrir o terminal `Ctrl + Alt + T` e seguir os passos abaixo: 
 
-### Database creation
+`gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`
 
-### Database initialization
+`\curl -sSL https://get.rvm.io | bash -s stable`
 
-### How to run the test suite
+Reinicie o terminal e coloque o comando:
 
-### Services (job queues, cache servers, search engines, etc.)
+`rvm install 2.1.0`
 
-### Deployment instructions
+Caso ele informe que não reconhece o comando rvm, faça o procedimento abaixo:
+* Menu Editar
+* Preferências do Perfil
+* Clique na aba Comando
+* Selecione o box "Executar comando como shell de sessão"
+* Reinicie seu terminal
+* rode `rvm install 2.1.0`
 
-* ...
+Todas as informações referentes a instalação do RVM pode ser vista [clicando aqui](http://www.rvm.io/)
 
+Instalação do Rails 4
+`gem install -v4.0.0 --no-ri --no-rdoc`
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Clona a aplicação
+`git clone git@github.com:acnjr2010/desafio-programacao-1b.git`
+
+Entre na pasta do projeto
+
+## Database creation and Database initialization
+Rode o comando abaixo dentro da pasta do projeto para criar e configurar o banco
+
+`rake db:create db:migrate`
+
+## How to run the test suite
+Para rodar os teste automáticos basta rodar o comando na pasta do projeto
+
+`rspec spec --format documentation`
+
+## How to run the application
+Para rodar a aplicação basta utilizar o comando abaixo:
+`rails server` ou `rails s`
+
+## Images 
+![](https://github.com/acnjr2010/desafio-programacao-1b/blob/master/desafio-programacao-1b/app/assets/images/Tela%20Home.png)
+![](https://github.com/acnjr2010/desafio-programacao-1b/blob/master/desafio-programacao-1b/app/assets/images/dados%20do%20arquivo.png)
