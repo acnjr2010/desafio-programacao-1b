@@ -1,13 +1,15 @@
 <h1>Antonio Carlos Nogueira Junior</h1>
 <hr>
 <h3>Adicionar Novo Arquivo</h3>
-
+<!-- Reinderiza o formulário -->
 <%= render 'form' %>
 <br>
 <hr>
 
+<!-- Verifica se não tiver nenhum item salvo ele oculta o histórico -->
 <% if @informations.present? %>
   <h3> Histórico</h3>
+  <!-- table-hover faz com que se destaque a linha que o mouse está em cima -->
   <table class="table table-hover">
     <thead>
       <th>Arquivo</th>
@@ -19,6 +21,7 @@
       <% @informations.each do |information| %>
         <tr>
           <td><%= information.document_file_name %></td>
+          <!-- time_tag cuida do formato que o texto aparece na tela -->
           <td><%= time_tag information.created_at %></td>
           <td><%= information.document_file_size %></td>
           <td><%= link_to "Visualizar", information_path(information) %></td>
@@ -28,6 +31,7 @@
 
   </table>
 
+  <!-- Chama a paginação da tela, a cada 5 inserções ele gera a paginação -->
   <div class="flickr_pagination">
     <%= will_paginate @informations %>
   </div>

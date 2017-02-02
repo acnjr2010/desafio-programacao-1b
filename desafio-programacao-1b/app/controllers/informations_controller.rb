@@ -1,6 +1,9 @@
 class InformationsController < ApplicationController
   def index
+    # Cria um novo arquivo de informação
     @information = Information.new
+
+    # Seleciona todos os arquivos para utilizar no histórico
     @informations = Information.all.paginate(page: params[:page], per_page: 5).order('created_at DESC')
   end
 

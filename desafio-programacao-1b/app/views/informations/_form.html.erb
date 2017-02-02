@@ -1,4 +1,5 @@
+<!-- Formulário de entrada de dados, aqui onde é escolhido o arquivo para ser inserido -->
 <%= form_for @information, url: informations_path, html: { multipart: true } do |f| %>
-  <%= f.file_field :document %>
+  <%= f.file_field :document, required: true %>
   <%= f.submit 'Enviar', class: 'btn btn-primary pull-right' %>
 <% end %>

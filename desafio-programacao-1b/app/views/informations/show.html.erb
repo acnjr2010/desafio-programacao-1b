@@ -1,10 +1,15 @@
 <h1>Relatório do arquivo adicionado <%= @information.document_file_name %></h1>
 
+<!-- Chama o arquivo salvo para trabalhar com ele salvando ele na variável file -->
 <% file = File.readlines("public/system/information/documents/000/000/0#{0.downto(0) do |n| print @information.id[n] end if @information.id <= 9}#{@information.id}/original/#{@information.document_file_name}") %>
 
+<!-- Separa o cabeçalho -->
 <% header = file[0].split("\t") %>
+
+<!-- Retira o escape \n -->
 <% header.last.chomp! %>
 
+<!-- Recupera os dados do arquivo linha a linha a partir da segunda posição do array -->
 <% text = [] %>
 <% file.drop(1).each do |f| %>
   <% text += f.split("\t") %>
@@ -13,6 +18,7 @@
 
 <div class="information">
   <table class="table table">
+    <!-- Imprime o cabeçalho -->
     <thead>
       <tr>
         <% header.each do |h| %>
@@ -25,6 +31,7 @@
 
     <tbody class="table-striped">
       <tr>
+        <!-- Imprime o conteudo-->
         <% text.count.times do |pos| %>
           <% if ((pos + 1) % 6 == 0) %>
             <td>
