@@ -29,10 +29,10 @@ Caso ele informe que não reconhece o comando rvm, faça o procedimento abaixo:
 
 Todas as informações referentes a instalação do RVM pode ser vista [clicando aqui](http://www.rvm.io/)
 
-Instalação do Rails 4
+####Instalação do Rails 4
 `gem install -v4.0.0 --no-ri --no-rdoc`
 
-Clona a aplicação
+####Clonar a aplicação
 `git clone git@github.com:acnjr2010/desafio-programacao-1b.git`
 
 Entre na pasta do projeto
