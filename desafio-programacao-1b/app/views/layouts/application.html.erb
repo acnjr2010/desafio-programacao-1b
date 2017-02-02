@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html class="full">
 <head>
-  <title>DesafioProgramacao1b</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Teste para Taxweb">
+    <meta name="author" content="Antonio Carlos Nogueira Junior">
+
+    <title>DesafioProgramacao1b</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-sm-12">
+        <%= yield %>
 
 </body>
 </html>

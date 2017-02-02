@@ -9,31 +9,39 @@
   <% text.last.chomp! %>
 <% end %>
 
-<table class="table table">
-  <thead>
-    <tr>
-      <% header.each do |h| %>
-        <th>
-          <%= h %>
-        </th>
-      <% end %>
-    </tr>
-  </thead>
+<div class="information">
+  <table class="table table">
+    <thead>
+      <tr>
+        <% header.each do |h| %>
+          <th>
+            <%= h %>
+          </th>
+        <% end %>
+      </tr>
+    </thead>
 
-  <tbody class="table-striped">
-    <tr>
-      <% text.count.times do |pos| %>
-        <% if ((pos + 1) % 6 == 0) %>
+    <tbody class="table-striped">
+      <tr>
+        <% text.count.times do |pos| %>
+          <% if ((pos + 1) % 6 == 0) %>
+            <td>
+              <%= text[pos] %>
+            </td>
+          </tr>
+          <tr>
+          <% else %>
           <td>
             <%= text[pos] %>
           </td>
-        </tr>
-        <tr>
-        <% else %>
-        <td>
-          <%= text[pos] %>
-        </td>
+          <% end %>
         <% end %>
-      <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+
+  <p>
+    Receita Bruta:
+  </p>
+
+  <%= link_to "Voltar", root_path, class: "btn btn-default pull-right" %>
+</div>
